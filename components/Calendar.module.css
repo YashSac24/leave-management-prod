@@ -1,0 +1,266 @@
+.calendarFull {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}
+
+.calHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0 4px;
+}
+
+.dateInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.calBadge {
+  background: #111;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: var(--text-dim);
+  border: 1px solid #1a1a1a;
+}
+
+.calBadge span {
+  display: block;
+  font-size: 1.1rem;
+  color: white;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.headerTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2px;
+  display: flex;
+  gap: 4px;
+}
+
+.subtext {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.navBtn {
+  background: #111;
+  border: 1px solid #1a1a1a;
+  color: var(--text-muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.navBtn:hover {
+  background: #1a1a1a;
+  color: white;
+  border-color: #333;
+}
+
+.pills {
+  display: flex;
+  background: #111;
+  border: 1px solid #1a1a1a;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.pill, .pillActive {
+  padding: 6px 14px;
+  border: none;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.2s;
+}
+
+.pillActive {
+  background: #1a1a1a;
+  color: white;
+}
+
+.dropdown {
+  padding: 8px 32px 8px 12px;
+  background: #111;
+  border: 1px solid #1a1a1a;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #eee;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  width: 130px;
+}
+
+.selectWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.selectIcon {
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+  color: var(--text-dim);
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: left;
+  padding: 12px 0 12px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #a1a1aa;
+  border-top: 1px solid #333;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 1fr;
+  flex: 1;
+  border-top: 1px solid #333;
+  border-left: 1px solid #333;
+}
+
+.day, .dayEmpty {
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+  padding: 14px;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.day:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.dayNumber {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #a1a1aa;
+  margin-bottom: 8px;
+}
+
+.todayNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.eventContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 2px 4px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.clickable:hover {
+  color: white;
+  background: #18181b;
+}
+
+.pickerPopup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(9, 9, 11, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 10px;
+  z-index: 100;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+  min-width: 180px;
+}
+
+.pickerGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.pickerGrid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.pickerGrid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pickerGrid::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+
+.pickerGrid::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+.pickerItem {
+  padding: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.pickerItem:hover {
+  background: #18181b;
+  color: #eee;
+}
+
+.pickerItemActive {
+  padding: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 6px;
+  background: #2563eb;
+}
